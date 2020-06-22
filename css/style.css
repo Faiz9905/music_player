@@ -109,7 +109,7 @@ input:focus{
     right: 0px;
     top: 2px;
     display: inline-block;
-    background-color: red;
+    background-color: blue;
     border-radius: 50%;
     z-index: 2;
 }
