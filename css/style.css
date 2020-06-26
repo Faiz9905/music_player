@@ -181,35 +181,7 @@ input:focus{
      /* border: 1px solid red; */
  }
 
- /* MEDIA QUERRY FOR MAIN SECTION */
- @media only screen and (max-width: 900px){
-    #main_content{
-        width: 90%;
-    }
-    #queue{
-        /* opacity: 0; */
-        /* position: absolute; */
-    }
- }
- /* @media only screen and (max-width: 900px){
-     #main_content{
-         width: 100%;
-         margin: auto;
-     }
-     #main{
-        width: 100%;
-        margin: auto;
-        overflow: hidden;
-    }
-    .popularMainDiv{
-        /* overflow-x: hidden; */
-        overflow-y: scroll;
-    }
 
- }
- @media only screen and (max-width: 600px){
-    
-} */
 
 /* SLIDE IN+MAGE SECTION */
 #slidingImage{
