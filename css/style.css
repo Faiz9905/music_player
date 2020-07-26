@@ -2,6 +2,7 @@ body{
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 30px;
+    /* overflow: hidden; */
     background-color: #030338;
 
 }
@@ -50,6 +51,7 @@ body{
    height: 100%;
    display: flex;
    align-items: center;
+   position: relative;
    /* border: 1px solid red;; */
    justify-content: space-between;
    background-color: #030338;
@@ -65,6 +67,7 @@ body{
 
 }
  #searchBar input[type = "search"]{
+
     width: 100%;
     height: 28px;
     font-size: 12px;
@@ -131,7 +134,10 @@ input:focus{
     display: block;
     position: relative;
 }
-
+.searchButton{
+    position: absolute;
+    visibility: hidden;
+}
 .dot{
     width: 8px;
     height: 8px;
@@ -150,7 +156,26 @@ input:focus{
     border-radius: 25px;
     background-color: white;
     z-index: 1;
-    /* border: 1px solid red; */
+    border: 1px solid red;
+}
+#bellCheckBox{
+    position: absolute;
+    left: 78%;
+}
+#bellCheckBox:checked  + .bellDetails{
+   background-color: violet;
+   visibility: visible;
+}
+.bellDetails{
+    width: 50%;
+    height: 400px;
+    cursor: pointer;
+    background-color: white;
+    position: absolute;
+    visibility: hidden;
+    top: 90%;
+    left: 40%;
+    z-index: 99;
 }
 
 /* Common Classes */
@@ -181,12 +206,15 @@ input:focus{
      /* border: 1px solid red; */
  }
 
-
-
+ /* MEDIA QUERRY FOR MAIN SECTION */
+ 
+ 
 /* SLIDE IN+MAGE SECTION */
 #slidingImage{
   height:280px;  
   width: 95%;
+  /* justify-content: center; */
+  /* align-items: center; */
   margin-top: 2rem;
   ;
   position: relative;
@@ -410,15 +438,18 @@ input:focus{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     flex-direction: row;
+    /* overflow-x: scroll; */
     background-color: transparent;
 }
 .artistThumbnail{
     height: 120px;
-    width: 120px;
-    min-width: 120px;
-    min-height: 120px ;
-    border-radius: 50%;
+    width: 15%;
+    /* min-width: 120px; */
+     /* min-width: 120px; */
+    /* min-height: 120px ;  */
+    border-radius: 55%;
     background-color: white;
 }
 /* ***********MEDIA QUERRY FOR POPULAR ARTIST SECTION */
@@ -434,19 +465,19 @@ input:focus{
     padding-bottom: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
 }
-.disc{
+/* .disc{
     height: 100px;
     width: 12%;
     /* border-radius: 80%; */
-    background-color: white;
-}
+    /* background-color: white; */
+/* }  */
 .fourth_circle{
     height: 90px;
     width: 11%;
-    border-radius: 80%;
+    /* border-radius: 80%; */
     background-color: white;
 }
 
@@ -460,14 +491,17 @@ input:focus{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
+    /* overflow-x: scroll; */
+    /* background-color: transparent; */
 }
-.fifth_flex{
-    height: 150px;
-    width: 32%;
-    background-color: white;
 
+.fifth_flex{
+    width: 32%;
+    height: 130px;
+    /* overflow-x: scroll; */
+    /* border: 1px solid red; */
 }
+
 /* Latest English */
 #latestEnglish{
     /* height: 200px; */
@@ -532,6 +566,7 @@ input:focus{
  #queue{
      width: 30%;
      height: 100%;
+     /* visibility: hidden; */
      /* border: 1px solid yellow; */
      display: flex;
      align-items: center;
@@ -681,9 +716,11 @@ input:focus{
     justify-content: center;
     align-items: center;
     background-color: rgb(76, 159, 228);
+    /* white */
+    /* rgb(76, 159, 228); */
 }
 .thumnail:hover{
-    /* opacity: 0.5; */
+    opacity: 0.5;
 
 
 }
@@ -724,19 +761,207 @@ input:focus{
     width: 100%;
     height: 80px;
     position: fixed;
-    /* top: 100px; */
-    bottom: 0px;;
+    display: flex;
+    justify-content: center;
+    bottom: 0px;
     background-color: rgb(104, 104, 104);
 }
-.paler1{
-    width: 100%;
-    height: 100%;
+
+.player1{
+    width: 85%;
+    height: 80px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
     position: fixed;
 }
+.first-player{
+    display: flex;
+    height: 100%;
+    width: 25%;
+    /* justify-content: center; */
+    align-items: center;
+    /* border: 1px solid blue; */
+}
+.player-thumnail{
+    width: 30%;
+    height: 80%;
+    /* margin-bottom: 10px; */
+    background-color: brown;
+
+}
+.player-song{
+    width: 100%;
+    height: 100%;
+    /* background-color: burlywood; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.part-upper{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: 1px solid red; */
+
+}
+.part-upper-span{
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.part-lower{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+.part-lower-span{
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.second-player{
+    display: flex;
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid blue; */
+}
+.second-player-upper-part{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid tomato; */
+}
+.second-player-upper-part-inner{
+     width: 60%;
+     height: 100%;
+     display: flex;
+     justify-content: space-evenly;
+     /* background-color: green; */
+}
+.inner-01{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+.inner-012{
+    width: 10%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+.icon-inner{
+    color: white;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+.second-player-lower-part{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* border: 1px solid tomato; */
 
 
+}
+.start-player{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid yellow; */
+}
+.range-player{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid yellow; */
+}
+.input-range{
+    width: 100%;
+    background-color: green;
+}
+.end-player{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid yellow; */
+}
+.start-player-span{
+    font-size: 0.7rem;
+    font-family: 400;
+    color: white;
+}
+.third-player{
+    display: flex;
+    height: 100%;
+    width: 25%;
+    justify-content: space-evenly;
+    /* border: 1px solid blue; */
+
+
+}
+.third-player-2{
+    display: flex;
+    height: 100%;
+    width: 80%;
+    /* border: 1px solid yellow; */
+    justify-content: space-evenly;
+    /* background-color: violet; */
+    /* border: 1px solid blue; */
+}
+.third-player-inner{
+    width: 7%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: tomato; */
+}
+.third-player-inner-input{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /************** COMMON CLASSES ********************/
+.curve{
+    border-radius: 10px;
+}
+.common-img-class{
+    width: 100%;
+    height: 100%;
+    
+}
+.img-round{
+    border-radius: 55%;
+}
 .sectionHeading{
     width: 100%;
     margin-top: 2rem;
@@ -746,12 +971,13 @@ input:focus{
 }
 
 .song_title{
-    color: white;
+    color: rgb(143, 3, 3);
     font-weight: 700;
     font-size: 1rem;  
     letter-spacing: .2px;
     display: block;
   }
+
   .song_dis{
       color: grey;
       font-weight: 600;
@@ -781,8 +1007,400 @@ input:focus{
 /****************COMMON CLASSES *******************/
 
 /* ****************MEDIA QUERRY***************** */
+@media only screen and (max-width: 768px){
+   #header{
+       width: 95%;
+   }
+   #logoNdfavorite{
+       justify-content: flex-start;
+   }
+   .logo{
+      /* min-width: 60px; */
+      width: 35px;
+      height: 35px;
+   }
+   .fav{
+     /* position: absolute;
+     visibility: hidden; */
+     font-weight: 400;
+     font-size: 0.8rem;
+     position: relative;
+     margin-left: 10px;
+   }
+   #searchBarSection{
+       width: 25%;
+       
+   }
+  
+
+.iconBell{
+    font-size: 1.4rem;
+   
+}
+.dot{
+    width: 6px;
+    height: 6px;
+}
+.profile{
+    height: 35px;
+    width: 35px;
+   
+}
+   #searchBar{
+       position: absolute;
+       visibility: hidden;
+   }
+   .searchButton{
+       position: static;
+       visibility: visible;
+   }
+  
+    #main{
+        width: 95%;
+    }
+    #main_content{
+        width: 100%;
+        margin: auto;
+    }
+
+    #queue{
+        visibility: hidden;
+        position: absolute;
+    }
+   
+    #slidingImage{
+        height: 230px;
+        width: 90%;
+        /* justify-content: center; */
+        /* align-items: center; */
+        margin: auto;
+
+    }
+    
+    .popularMainDiv{
+        overflow-x: auto;
+        overflow-y: hidden;
+
+    }
+    .artistThumbnail{
+        width: 120px;
+        height: 90%;
+        min-width: 120px;
+
+    }
+    #fourth{
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }  
+    .fourth_circle{
+        height: 110px;
+        width: 110px;
+        min-width: 110px;
+    }
+  
+    .latestEnglishDiv{
+      overflow-x: scroll;
+      overflow-y: hidden;
+      height: 150px;
+    } 
+    .latestEnglishThumbnail{
+        height: 150px;
+       width: 105px;
+       min-width: 105px;
+       margin: 1px;
+    }
+    .player1{
+        width: 100%;
+    }
+    .first-player{
+        width: 40%;
+    }
+    .second-player{
+        width: 60%;
+    }
+    .third-player{
+        position: absolute;
+        visibility: hidden;
+    }
+   
+}
+@media only screen and (max-width: 320px){
+      
+   #main{
+       width: 95%;
+       overflow-x: hidden;
+   }
+    #logoNdfavorite{
+       
+    }
+    .logo{
+       min-width: 30px;
+       height: 30px;
+    }
+    #searchBarSection{
+        width: 40%;
+    }
+
+    .iconBell{
+        font-size: 1.1rem;
+    }
+    .dot{
+        width: 5px;
+        height: 5px;
+    }
+    .profile{
+        height: 30px;
+        width: 30px;
+    }
+    #slidingImage{
+        height: 200px;
+        width: 90%;
+        /* justify-content: center; */
+        /* align-items: center; */
+        margin: auto;
+
+    }
+    .top{
+         height: 120%;
+    }
+    #fifth{
+        overflow-x: scroll;
+        margin: auto;
+        width: 99%;
+        
+    }
+    .fifth_flex{
+        padding-right: 3px;
+        padding-right: 3px;
+        width: 100%;
+        min-width: 100%;
+        margin: 2px;
+        
+    }
+
+    .latestEnglishThumbnail{
+        width: 150px;
+        min-width: 150px;
+        margin: 1px;
+     }
+}
 
 
 
+/* **************** MEDIA QUERRY **************** */
 
-/* ****************MEDIA QUERRY***************** */
+
+/* Second Page CSS */
+#secondQueue{
+    width: 30%;
+    height: 100%;
+    /* visibility: hidden; */
+    /* border: 1px solid yellow; */
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    /* overflow: scroll; */
+    flex-direction: column;
+}
+#queueFirst{
+    width: 100%;
+    /* height: 100%; */
+    /* visibility: hidden; */
+    /* border: 1px solid yellow; */
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    /* overflow: scroll; */
+    flex-direction: column;
+}
+#queueSecond{
+    width: 100%;
+    /* height: 100%; */
+    /* visibility: hidden; */
+    /* border: 1px solid yellow; */
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    /* overflow: scroll; */
+    flex-direction: column;
+}
+.main_content_2{
+    /* border: 1px solid red; */
+    /* width: 60%; */
+    align-items: center;
+}
+.banner{
+    width: 90%;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    /* margin: auto; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 300px;
+}
+.firstBanner{
+    width: 40%;
+    background-color: salmon;
+    height: 100%;
+}
+
+.secondBanner{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f0f6e;
+    height: 100%;
+}
+.innerSecondBanner{
+    width: 85%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: #0f0f6e;
+}
+.bannerHeader{
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+}
+.s1{
+    color: white;
+    font-weight: 600;
+    font-size: 1.7rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     
+}
+.s2{
+    color: rgb(211, 210, 210);
+    font-weight: 300;
+    font-size: 1rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     
+
+}
+.bannerDiscription{
+    margin-top: 10px;
+   display: flex;
+   line-height: 15px;
+   text-align: justify;
+}
+.s3{
+    color: rgb(211, 210, 210);
+    font-weight: 300;
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+     
+
+}
+.bannerButton{
+    display: flex;
+    flex-direction: column;
+}
+.btn-second{
+    width: 35%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    border: none;
+    color: white;
+    background-color: #030338;
+}
+.button-span{
+    color: white;
+    font-weight: 300;
+    font-size: 0.7rem;
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#accord{
+    width: 90%;
+    margin-top: 50px;
+    /* background-color: antiquewhite; */
+    /* border: 1px solid red; */
+   
+    display: flex;
+    flex-direction: column;
+    /* margin: auto; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 350px; */
+}
+
+.listOfSong{
+    width: 100%;
+    height: 80px;
+    background-color: #0f0f6e;
+    margin-top: 7px;
+    /* background-color: ; */
+    /* border: 1px solid gray; */
+    display: flex;
+
+}
+.firstHalf{
+    width: 75%;
+    display: flex;
+    /* border: 1px solid salmon; */
+    align-items: center;
+    /* justify-content: space-between; */
+
+}
+.serialNo{
+    width: 20px;
+    display: flex;
+    /* position: relative;
+    left: 10px; */
+    margin-left: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.serialNo span{
+    font-size: 1.2rem;
+    color: white;
+}
+.thumnailSecond{
+    height: 80%;
+    width: 60px;
+    margin-left: 5px;
+    /* position: relative; */
+    /* left: 0.5rem; */
+    background-color: salmon;
+}
+.secondHalf{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+.discription{
+    
+}
+/* .queueBoxList_02{
+  width: 97.5%;
+  border: 1px solid green;
+}
+
+.thumnailSecond{
+        width: 30px;
+        height: 80%;
+        position: relative;
+        left: 0.5rem;
+        border-radius: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(76, 159, 228);
+        /* white */
+        /* rgb(76, 159, 228); */
+    
+
+
+/* / */
